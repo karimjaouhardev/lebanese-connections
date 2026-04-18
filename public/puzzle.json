@@ -14,10 +14,10 @@
     ]
   },
   {
-    "id": "famous_surah_names",
+    "id": "surahs_from_quran",
     "title": {
-      "ar": "أسماء سور مشهورة",
-      "en": "Famous Surah Names"
+      "ar": "سور من القرآن الكريم",
+      "en": "Surahs from the Holy Quran"
     },
     "solvedColor": "#b1c95b",
     "words": [
