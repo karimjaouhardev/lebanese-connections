@@ -88,10 +88,18 @@ function getWordLines(word: PuzzleWord, language: Language) {
 
   return {
     primary: word.arabic,
-    secondary: word.arabeezy,
+    secondary: undefined,
     primaryDir: "rtl" as const,
     secondaryDir: "ltr" as const,
   };
+}
+
+function getTilePrimaryClass(language: Language) {
+  if (language === "ar") {
+    return "text-[clamp(1.18rem,3.35vw,1.52rem)]";
+  }
+
+  return "text-[clamp(1.08rem,3vw,1.4rem)]";
 }
 
 function getGroupTitle(group: Group, language: Language) {
@@ -113,6 +121,7 @@ export default function App() {
   const [tiles, setTiles] = useState<Tile[]>([]);
   const copy = COPY[language];
   const isArabic = language === "ar";
+  const englishFontClass = !isArabic ? "font-ui-en" : "";
 
   useEffect(() => {
     let isActive = true;
@@ -216,6 +225,7 @@ export default function App() {
                 onClick={() => setLanguage("ar")}
                 className={clsx(
                   "rounded-full px-4 py-2 text-sm font-semibold transition",
+                  englishFontClass,
                   isArabic ? "bg-white text-[#121212] shadow-sm" : "text-stone-600"
                 )}
               >
@@ -226,6 +236,7 @@ export default function App() {
                 onClick={() => setLanguage("en")}
                 className={clsx(
                   "rounded-full px-4 py-2 text-sm font-semibold transition",
+                  englishFontClass,
                   !isArabic ? "bg-white text-[#121212] shadow-sm" : "text-stone-600"
                 )}
               >
@@ -233,10 +244,22 @@ export default function App() {
               </button>
             </div>
           </div>
-          <h1 className="text-[clamp(1.65rem,4vw,2.15rem)] font-black tracking-tight">
+          <h1
+            className={clsx(
+              "text-[clamp(1.65rem,4vw,2.15rem)] tracking-tight",
+              englishFontClass,
+              isArabic ? "font-black" : "font-semibold"
+            )}
+          >
             {copy.title}
           </h1>
-          <p className="mt-2 text-[clamp(1rem,2.2vw,1.18rem)] font-medium text-stone-700">
+          <p
+            className={clsx(
+              "mt-2 text-[clamp(1rem,2.2vw,1.18rem)] text-stone-700",
+              englishFontClass,
+              isArabic ? "font-medium" : "font-normal"
+            )}
+          >
             {status === "loading"
               ? copy.loadingHeading
               : status === "error"
@@ -270,7 +293,13 @@ export default function App() {
                   className="rounded-[1rem] px-3 py-4 text-center sm:px-4 sm:py-5"
                   style={{ backgroundColor: group.solvedColor }}
                 >
-                  <div className="text-[clamp(1.05rem,2.4vw,1.5rem)] font-black leading-tight">
+                  <div
+                    className={clsx(
+                      "text-[clamp(1.05rem,2.4vw,1.5rem)] leading-tight",
+                      englishFontClass,
+                      isArabic ? "font-black" : "font-semibold"
+                    )}
+                  >
                     {getGroupTitle(group, language)}
                   </div>
                   <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-2 sm:grid-cols-4">
@@ -282,14 +311,22 @@ export default function App() {
                         <div key={word.arabic} className="text-center">
                           <div
                             dir={primaryDir}
-                            className="text-[0.98rem] font-semibold leading-tight text-stone-900 sm:text-[1.08rem]"
+                            className={clsx(
+                              "text-[1.08rem] leading-tight text-stone-900 sm:text-[1.16rem]",
+                              englishFontClass,
+                              isArabic ? "font-medium" : "font-medium"
+                            )}
                           >
                             {primary}
                           </div>
                           {secondary ? (
                             <div
                               dir={secondaryDir}
-                              className="mt-1 text-[0.68rem] font-semibold tracking-[0.05em] text-stone-700 sm:text-[0.74rem]"
+                              className={clsx(
+                                "mt-1 text-[0.72rem] tracking-[0.05em] text-stone-700 sm:text-[0.78rem]",
+                                englishFontClass,
+                                isArabic ? "font-medium" : "font-medium"
+                              )}
                             >
                               {secondary}
                             </div>
@@ -335,7 +372,12 @@ export default function App() {
                         <span className="flex flex-col items-center gap-1 leading-none">
                           <span
                             dir={primaryDir}
-                            className="text-[clamp(0.82rem,2vw,1.22rem)] font-black leading-tight"
+                            className={clsx(
+                              "leading-tight",
+                              getTilePrimaryClass(language),
+                              englishFontClass,
+                              isArabic ? "font-medium" : "font-semibold"
+                            )}
                           >
                             {primary}
                           </span>
@@ -343,7 +385,9 @@ export default function App() {
                             <span
                               dir={secondaryDir}
                               className={clsx(
-                                "text-[0.54rem] font-semibold tracking-[0.05em] sm:text-[0.68rem]",
+                                "text-[0.66rem] tracking-[0.05em] sm:text-[0.74rem]",
+                                englishFontClass,
+                                isArabic ? "font-medium" : "font-medium",
                                 isSelected ? "text-white/85" : "text-stone-500"
                               )}
                             >
@@ -357,7 +401,15 @@ export default function App() {
                 </motion.div>
 
                 <div className="mt-5 flex items-center justify-center gap-3 text-[0.95rem] sm:text-[1.03rem]">
-                  <span className="font-medium text-stone-700">{copy.mistakesRemaining}</span>
+                  <span
+                    className={clsx(
+                      "text-stone-700",
+                      englishFontClass,
+                      isArabic ? "font-medium" : "font-normal"
+                    )}
+                  >
+                    {copy.mistakesRemaining}
+                  </span>
                   <div className="flex gap-2" dir="ltr">
                     {Array.from({ length: MAX_MISTAKES }, (_, index) => (
                       <span
@@ -375,14 +427,14 @@ export default function App() {
                   <button
                     type="button"
                     onClick={shuffleBoard}
-                    className={actionButtonClass}
+                    className={clsx(actionButtonClass, englishFontClass, !isArabic && "font-medium")}
                   >
                     {copy.shuffle}
                   </button>
                   <button
                     type="button"
                     onClick={clearSelection}
-                    className={actionButtonClass}
+                    className={clsx(actionButtonClass, englishFontClass, !isArabic && "font-medium")}
                   >
                     {copy.clearSelection}
                   </button>
@@ -390,7 +442,7 @@ export default function App() {
                     type="button"
                     onClick={submitGuess}
                     disabled={selected.length !== 4}
-                    className={actionButtonClass}
+                    className={clsx(actionButtonClass, englishFontClass, !isArabic && "font-medium")}
                   >
                     {copy.submit}
                   </button>
@@ -401,7 +453,12 @@ export default function App() {
                 <button
                   type="button"
                   onClick={resetGame}
-                  className={clsx(actionButtonClass, "min-w-40")}
+                  className={clsx(
+                    actionButtonClass,
+                    "min-w-40",
+                    englishFontClass,
+                    !isArabic && "font-medium"
+                  )}
                 >
                   {copy.playAgain}
                 </button>

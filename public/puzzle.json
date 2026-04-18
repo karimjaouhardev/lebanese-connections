@@ -1,58 +1,58 @@
 [
   {
-    "id": "mar_names",
+    "id": "lebanese_greetings",
     "title": {
-      "ar": "تأتي بعد «مار»",
-      "en": "Come After “Mar”"
+      "ar": "عبارات ترحيب لبنانية",
+      "en": "Lebanese Greeting Phrases"
     },
     "solvedColor": "#f9df6d",
     "words": [
-      { "arabic": "مخايل", "arabeezy": "mkhayel" },
-      { "arabic": "الياس", "arabeezy": "elias" },
-      { "arabic": "نقولا", "arabeezy": "ni2ola" },
-      { "arabic": "شربل", "arabeezy": "charbel" }
+      { "arabic": "مرحبا", "arabeezy": "mar7aba" },
+      { "arabic": "أهلا", "arabeezy": "ahla" },
+      { "arabic": "صباح", "arabeezy": "saba7" },
+      { "arabic": "هلا", "arabeezy": "hala" }
     ]
   },
   {
-    "id": "names_and_words",
+    "id": "famous_surah_names",
     "title": {
-      "ar": "أسماء وأيضًا كلمات عادية",
-      "en": "Names That Are Also Common Words"
-    },
-    "solvedColor": "#a0c3ff",
-    "words": [
-      { "arabic": "أمل", "arabeezy": "amal" },
-      { "arabic": "نور", "arabeezy": "nour" },
-      { "arabic": "كرم", "arabeezy": "karam" },
-      { "arabic": "ورد", "arabeezy": "ward" }
-    ]
-  },
-  {
-    "id": "with_white",
-    "title": {
-      "ar": "تأتي قبل «أبيض»",
-      "en": "Can Come Before “White”"
+      "ar": "أسماء سور مشهورة",
+      "en": "Famous Surah Names"
     },
     "solvedColor": "#b1c95b",
     "words": [
-      { "arabic": "قلب", "arabeezy": "2alb" },
-      { "arabic": "كذب", "arabeezy": "kezeb" },
-      { "arabic": "سلاح", "arabeezy": "sile7" },
-      { "arabic": "شعر", "arabeezy": "sha3er" }
+      { "arabic": "البقرة", "arabeezy": "elba2ara" },
+      { "arabic": "الكهف", "arabeezy": "elkahf" },
+      { "arabic": "يوسف", "arabeezy": "yousef" },
+      { "arabic": "مريم", "arabeezy": "maryam" }
     ]
   },
   {
-    "id": "same_spelling_diff_reading",
+    "id": "middle_children_family",
     "title": {
-      "ar": "نفس الكتابة، قراءة/معنى مختلف",
-      "en": "Same Spelling, Different Reading/Meaning"
+      "ar": "أسماء الأولاد الوسطانيين بالعيلة",
+      "en": "Middle Children in the Family"
+    },
+    "solvedColor": "#a0c3ff",
+    "words": [
+      { "arabic": "جاد", "arabeezy": "jad" },
+      { "arabic": "سارة", "arabeezy": "sara" },
+      { "arabic": "عمر", "arabeezy": "omar" },
+      { "arabic": "وسيم", "arabeezy": "waseem" }
+    ]
+  },
+  {
+    "id": "fairuz_song_openers",
+    "title": {
+      "ar": "أول كلمة من أغاني فيروز",
+      "en": "First Word of Fairuz Songs"
     },
     "solvedColor": "#ba81c5",
     "words": [
-      { "arabic": "علم", "arabeezy": "3alam / 3elem" },
-      { "arabic": "ملك", "arabeezy": "malek / malak / mele k" },
-      { "arabic": "سلم", "arabeezy": "salam / سلم / سلّم" },
-      { "arabic": "عقد", "arabeezy": "3a2d / 3e2ed / 3aqd" }
+      { "arabic": "كيفك", "arabeezy": "kifak" },
+      { "arabic": "نسّم", "arabeezy": "nassam" },
+      { "arabic": "بكتب", "arabeezy": "bektoub" },
+      { "arabic": "سلملي", "arabeezy": "salimleh" }
     ]
   }
 ]

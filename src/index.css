@@ -26,6 +26,10 @@ button {
   font: inherit;
 }
 
+.font-ui-en {
+  font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
 ::selection {
   background: #d7d1c3;
   color: #121212;
