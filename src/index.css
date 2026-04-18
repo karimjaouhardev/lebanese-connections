@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "IBM Plex Sans Arabic", "Noto Sans Arabic", "Segoe UI", Tahoma,
+    sans-serif;
+  color: #121212;
+  background: #f7f6f3;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f7f6f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: #d7d1c3;
+  color: #121212;
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "mar_names",
+    "title": {
+      "ar": "تأتي بعد «مار»",
+      "en": "Come After “Mar”"
+    },
+    "solvedColor": "#f9df6d",
+    "words": [
+      { "arabic": "مخايل", "arabeezy": "mkhayel" },
+      { "arabic": "الياس", "arabeezy": "elias" },
+      { "arabic": "نقولا", "arabeezy": "ni2ola" },
+      { "arabic": "شربل", "arabeezy": "charbel" }
+    ]
+  },
+  {
+    "id": "names_and_words",
+    "title": {
+      "ar": "أسماء وأيضًا كلمات عادية",
+      "en": "Names That Are Also Common Words"
+    },
+    "solvedColor": "#a0c3ff",
+    "words": [
+      { "arabic": "أمل", "arabeezy": "amal" },
+      { "arabic": "نور", "arabeezy": "nour" },
+      { "arabic": "كرم", "arabeezy": "karam" },
+      { "arabic": "ورد", "arabeezy": "ward" }
+    ]
+  },
+  {
+    "id": "with_white",
+    "title": {
+      "ar": "تأتي قبل «أبيض»",
+      "en": "Can Come Before “White”"
+    },
+    "solvedColor": "#b1c95b",
+    "words": [
+      { "arabic": "قلب", "arabeezy": "2alb" },
+      { "arabic": "كذب", "arabeezy": "kezeb" },
+      { "arabic": "سلاح", "arabeezy": "sile7" },
+      { "arabic": "شعر", "arabeezy": "sha3er" }
+    ]
+  },
+  {
+    "id": "same_spelling_diff_reading",
+    "title": {
+      "ar": "نفس الكتابة، قراءة/معنى مختلف",
+      "en": "Same Spelling, Different Reading/Meaning"
+    },
+    "solvedColor": "#ba81c5",
+    "words": [
+      { "arabic": "علم", "arabeezy": "3alam / 3elem" },
+      { "arabic": "ملك", "arabeezy": "malek / malak / mele k" },
+      { "arabic": "سلم", "arabeezy": "salam / سلم / سلّم" },
+      { "arabic": "عقد", "arabeezy": "3a2d / 3e2ed / 3aqd" }
+    ]
+  }
+]
