@@ -1,58 +1,58 @@
 [
   {
-    "id": "lebanese_greetings",
+    "id": "turkish_origin_lebanese_words",
     "title": {
-      "ar": "عبارات ترحيب لبنانية",
-      "en": "Lebanese Greeting Phrases"
+      "ar": "كلمات لبنانية من أصل تركي",
+      "en": "Lebanese Words of Turkish Origin"
     },
     "solvedColor": "#f9df6d",
     "words": [
-      { "arabic": "مرحبا", "arabeezy": "mar7aba" },
-      { "arabic": "أهلا", "arabeezy": "ahla" },
-      { "arabic": "صباح", "arabeezy": "saba7" },
-      { "arabic": "هلا", "arabeezy": "hala" }
+      { "arabic": "أوضة", "arabeezy": "2awda" },
+      { "arabic": "درابزين", "arabeezy": "darabzeen" },
+      { "arabic": "طنجرة", "arabeezy": "tanjara" },
+      { "arabic": "جزدان", "arabeezy": "jezden" }
     ]
   },
   {
-    "id": "surahs_from_quran",
+    "id": "words_said_after_ya",
     "title": {
-      "ar": "سور من القرآن الكريم",
-      "en": "Surahs from the Holy Quran"
+      "ar": "كلمات بتجي بعد \"يا\"",
+      "en": "Things Often Said After “Ya”"
     },
     "solvedColor": "#b1c95b",
     "words": [
-      { "arabic": "البقرة", "arabeezy": "elba2ara" },
-      { "arabic": "الكهف", "arabeezy": "elkahf" },
-      { "arabic": "يوسف", "arabeezy": "yousef" },
-      { "arabic": "مريم", "arabeezy": "maryam" }
+      { "arabic": "حرام", "arabeezy": "7aram" },
+      { "arabic": "لطيف", "arabeezy": "lateef" },
+      { "arabic": "خيي", "arabeezy": "khayye" },
+      { "arabic": "ناس", "arabeezy": "nas" }
     ]
   },
   {
-    "id": "middle_children_family",
+    "id": "french_origin_lebanese_words",
     "title": {
-      "ar": "أسماء الأولاد الوسطانيين بالعيلة",
-      "en": "Middle Children in the Family"
+      "ar": "كلمات لبنانية من أصل فرنسي",
+      "en": "Lebanese Words of French Origin"
     },
     "solvedColor": "#a0c3ff",
     "words": [
-      { "arabic": "جاد", "arabeezy": "jad" },
-      { "arabic": "سارة", "arabeezy": "sara" },
-      { "arabic": "عمر", "arabeezy": "omar" },
-      { "arabic": "وسيم", "arabeezy": "waseem" }
+      { "arabic": "صالون", "arabeezy": "salon" },
+      { "arabic": "بلكون", "arabeezy": "balcon" },
+      { "arabic": "كرافات", "arabeezy": "kravat" },
+      { "arabic": "بلوزة", "arabeezy": "blouze" }
     ]
   },
   {
-    "id": "fairuz_song_openers",
+    "id": "fortune_telling_superstition_words",
     "title": {
-      "ar": "أول كلمة من أغاني فيروز",
-      "en": "First Word of Fairuz Songs"
+      "ar": "كلمات مرتبطة بقراءة الفنجان والخرافات",
+      "en": "Words Associated with Fortune-Telling / Superstition"
     },
     "solvedColor": "#ba81c5",
     "words": [
-      { "arabic": "كيفك", "arabeezy": "kifak" },
-      { "arabic": "نسّم", "arabeezy": "nassam" },
-      { "arabic": "بكتب", "arabeezy": "bektoub" },
-      { "arabic": "سلملي", "arabeezy": "salimleh" }
+      { "arabic": "فنجان", "arabeezy": "finjen" },
+      { "arabic": "خرزة", "arabeezy": "kharze" },
+      { "arabic": "ودع", "arabeezy": "wada3" },
+      { "arabic": "كف", "arabeezy": "kaff" }
     ]
   }
 ]
