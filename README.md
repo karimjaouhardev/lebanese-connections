@@ -1,73 +1,98 @@
-# React + TypeScript + Vite
+# Lebanese Connections
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A bilingual (Arabic/English) word-connections game built with React + TypeScript + Vite.
 
-Currently, two official plugins are available:
+## What this app now includes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Daily-style 4x4 connections gameplay (from `public/puzzle.json`)
+- Arabic/English toggle with RTL/LTR support
+- Firebase Authentication:
+  - Google sign-in
+  - Username/password sign-up and sign-in
+- Persistent login (users stay signed in on the same browser)
+- Per-user stats stored in Firestore:
+  - current streak
+  - best streak
+  - wins
+  - losses
+  - games played
 
-## React Compiler
+## Local development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Install dependencies:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Create env file:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cp .env.example .env.local
 ```
+
+3. Fill in Firebase values in `.env.local`.
+
+4. Start dev server:
+
+```bash
+npm run dev
+```
+
+## Firebase setup (quick)
+
+1. Create a Firebase project at https://console.firebase.google.com
+2. Add a **Web App** and copy its config values into `.env.local`.
+3. Enable Authentication providers:
+   - `Authentication` -> `Sign-in method`
+   - Enable `Google`
+   - Enable `Email/Password`
+4. Create Firestore database:
+   - `Firestore Database` -> `Create database`
+   - Start in production mode
+5. Set Firestore rules using `firestore.rules` in this repo:
+
+```txt
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    match /users/{userId}/dailyProgress/{puzzleDate} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+```
+
+## Username/password behavior
+
+Firebase email/password auth is used under the hood.
+
+- If the user enters a plain username (for example `karim`), the app maps it to an internal email format: `karim@family.local`.
+- This keeps sign-up simple for family while still using standard Firebase auth.
+
+## Commands
+
+```bash
+npm run dev
+npm run build
+npm run lint
+npm run preview
+```
+
+## Puzzle data format
+
+Puzzle groups come from `public/puzzle.json`:
+
+- 4 words per group
+- each group has `id`, `title`, `solvedColor`, and `words`
+- each word supports:
+  - `arabic` (required)
+  - `arabeezy` (optional)

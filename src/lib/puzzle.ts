@@ -15,6 +15,11 @@ export type Group = {
   words: PuzzleWord[];
 };
 
+export type PuzzleDefinition = {
+  puzzleId: string;
+  groups: Group[];
+};
+
 const STATIC_PUZZLE_URL = "/puzzle.json";
 const DEFAULT_API_URL = "/api/puzzle";
 const API_URL = import.meta.env.VITE_PUZZLE_API_URL || DEFAULT_API_URL;
@@ -88,6 +93,54 @@ function validateGroups(value: unknown): Group[] {
   }));
 }
 
+function normalizePuzzleId(value: unknown): string | null {
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return String(Math.trunc(value));
+  }
+
+  if (typeof value !== "string") {
+    return null;
+  }
+
+  const sanitized = value.trim();
+  if (!sanitized || sanitized.includes("/")) {
+    return null;
+  }
+
+  return sanitized;
+}
+
+function getLegacyPuzzleId(groups: Group[]) {
+  return `legacy-${groups.map((group) => group.id).join("-")}`;
+}
+
+function validatePuzzle(value: unknown): PuzzleDefinition {
+  if (Array.isArray(value)) {
+    const groups = validateGroups(value);
+    return {
+      puzzleId: getLegacyPuzzleId(groups),
+      groups,
+    };
+  }
+
+  if (!value || typeof value !== "object") {
+    throw new Error("Invalid puzzle payload.");
+  }
+
+  const candidate = value as Record<string, unknown>;
+  const groups = validateGroups(candidate.groups);
+  const puzzleId = normalizePuzzleId(candidate.puzzleId);
+
+  if (!puzzleId) {
+    throw new Error("Invalid puzzle payload. Missing puzzleId.");
+  }
+
+  return {
+    puzzleId,
+    groups,
+  };
+}
+
 async function fetchJson(url: string) {
   const response = await fetch(url);
 
@@ -98,18 +151,23 @@ async function fetchJson(url: string) {
   return response.json();
 }
 
-export async function loadGroups() {
+export async function loadPuzzle() {
   try {
     const apiPayload = await fetchJson(API_URL);
-    return validateGroups(apiPayload);
+    return validatePuzzle(apiPayload);
   } catch (apiError) {
     if (API_URL !== STATIC_PUZZLE_URL) {
       const staticPayload = await fetchJson(STATIC_PUZZLE_URL);
-      return validateGroups(staticPayload);
+      return validatePuzzle(staticPayload);
     }
 
     throw apiError;
   }
+}
+
+export async function loadGroups() {
+  const puzzle = await loadPuzzle();
+  return puzzle.groups;
 }
 
 export function createTiles(groups: Group[]) {

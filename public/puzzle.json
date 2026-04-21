@@ -1,58 +1,61 @@
-[
-  {
-    "id": "turkish_origin_lebanese_words",
-    "title": {
-      "ar": "كلمات لبنانية من أصل تركي",
-      "en": "Lebanese Words of Turkish Origin"
+{
+  "puzzleId": 1,
+  "groups": [
+    {
+      "id": "soft_drinks_first_word_in_arabic",
+      "title": {
+        "ar": "أول كلمة من أسماء مشروبات مترجمة للعربية",
+        "en": "First Word of Soft Drink Names but in Arabic"
+      },
+      "solvedColor": "#f9df6d",
+      "words": [
+        { "arabic": "سبعة", "arabeezy": "sab3a" },
+        { "arabic": "تجميد", "arabeezy": "tajmeed" },
+        { "arabic": "لذيذة", "arabeezy": "lazeeza" },
+        { "arabic": "أحمر", "arabeezy": "a7mar" }
+      ]
     },
-    "solvedColor": "#f9df6d",
-    "words": [
-      { "arabic": "أوضة", "arabeezy": "2awda" },
-      { "arabic": "درابزين", "arabeezy": "darabzeen" },
-      { "arabic": "طنجرة", "arabeezy": "tanjara" },
-      { "arabic": "جزدان", "arabeezy": "jezden" }
-    ]
-  },
-  {
-    "id": "words_said_after_ya",
-    "title": {
-      "ar": "كلمات بتجي بعد \"يا\"",
-      "en": "Things Often Said After “Ya”"
+    {
+      "id": "words_related_to_spiders",
+      "title": {
+        "ar": "كلمات مرتبطة بالعنكبوت",
+        "en": "Words Related to Spiders"
+      },
+      "solvedColor": "#b1c95b",
+      "words": [
+        { "arabic": "شبكة", "arabeezy": "shabake" },
+        { "arabic": "ثمانية", "arabeezy": "tmene" },
+        { "arabic": "سم", "arabeezy": "samm" },
+        { "arabic": "يزحف", "arabeezy": "yiz7af" }
+      ]
     },
-    "solvedColor": "#b1c95b",
-    "words": [
-      { "arabic": "حرام", "arabeezy": "7aram" },
-      { "arabic": "لطيف", "arabeezy": "lateef" },
-      { "arabic": "خيي", "arabeezy": "khayye" },
-      { "arabic": "ناس", "arabeezy": "nas" }
-    ]
-  },
-  {
-    "id": "french_origin_lebanese_words",
-    "title": {
-      "ar": "كلمات لبنانية من أصل فرنسي",
-      "en": "Lebanese Words of French Origin"
+    {
+      "id": "lebanese_words_different_in_egyptian",
+      "title": {
+        "ar": "كلمات لبنانية معناها مختلف بالمصري",
+        "en": "Lebanese Words with Different Meanings in Egyptian Arabic"
+      },
+      "solvedColor": "#a0c3ff",
+      "words": [
+        { "arabic": "لبن", "arabeezy": "laban" },
+        { "arabic": "ناصح", "arabeezy": "nase7" },
+        { "arabic": "يعيط", "arabeezy": "ya3eyet" },
+        { "arabic": "دولاب", "arabeezy": "doulab" }
+      ]
     },
-    "solvedColor": "#a0c3ff",
-    "words": [
-      { "arabic": "صالون", "arabeezy": "salon" },
-      { "arabic": "بلكون", "arabeezy": "balcon" },
-      { "arabic": "كرافات", "arabeezy": "kravat" },
-      { "arabic": "بلوزة", "arabeezy": "blouze" }
-    ]
-  },
-  {
-    "id": "fortune_telling_superstition_words",
-    "title": {
-      "ar": "كلمات مرتبطةالتبصير",
-      "en": "Words Associated with Fortune-Telling / Superstition"
-    },
-    "solvedColor": "#ba81c5",
-    "words": [
-      { "arabic": "فنجان", "arabeezy": "finjen" },
-      { "arabic": "خرزة", "arabeezy": "kharze" },
-      { "arabic": "ودع", "arabeezy": "wada3" },
-      { "arabic": "كف", "arabeezy": "kaff" }
-    ]
-  }
-]
+    {
+      "id": "words_after_bayt",
+      "title": {
+        "ar": "كلمات بتجي بعد \"بيت\"",
+        "en": "Words That Come After “Bayt”"
+      },
+      "solvedColor": "#ba81c5",
+      "words": [
+        { "arabic": "السبع", "arabeezy": "elsabe3" },
+        { "arabic": "بيوت", "arabeezy": "byout" },
+        { "arabic": "جوهر", "arabeezy": "jawhar" },
+        { "arabic": "الأبيض", "arabeezy": "el2abyaḍ" }
+      ]
+    }
+  ]
+}
